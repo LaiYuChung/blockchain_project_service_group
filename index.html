@@ -28,7 +28,7 @@
   		const receiver = revElement.value;
   		const descriptionElement = document.getElementById("description");
   		const description = descriptionElement.value;
-  		jsonCode = "{\"sen\":\"" + sender + "\", \"rev\":\"" + receiver + "\", \"method\": \"2\", \"description\": \"" + description + "\", \"txn\":\"X99KHARMXNVFRDSKBIBFVBYSXRDMZRLYUHWNET9PJHXPIJUWEKWVQWGPHABKYRTKYVJXJWULDEKE99999\"}"
+  		jsonCode = "{\"sender\":\"" + sender + "\", \"receiver\":\"" + receiver + "\", \"method\": \"2\", \"description\": \"" + description + "\", \"txn\":\"X99KHARMXNVFRDSKBIBFVBYSXRDMZRLYUHWNET9PJHXPIJUWEKWVQWGPHABKYRTKYVJXJWULDEKE99999\"}"
   		console.log(jsonCode);
 
   		$.ajax({
