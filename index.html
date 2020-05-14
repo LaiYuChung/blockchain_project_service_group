@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+  </head>
+
+  
+  <body>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  	<form name='form' id='form'>
+  	sen: 
+  	<input type='text' name='sen' id='sen' />
+  	rev：
+  	<input type='text' name='rev：' id='rev' />
+  	description：
+  	<input type='text' name='rev：' id='description' />
+  	<input type='button' name='submit' value='送出' onclick='processFormData();' />
+	</form>
+
+  </body>
+
+  <script>
+  	function processFormData() {
+  		const senElement = document.getElementById("sen");
+  		const sender = senElement.value;
+  		const revElement = document.getElementById("rev");
+  		const receiver = revElement.value;
+  		const descriptionElement = document.getElementById("description");
+  		const description = descriptionElement.value;
+  		jsonCode = "{\"sen\":\"" + sender + "\", \"rev\":\"" + receiver + "\", \"method\": \"2\", \"description\": \"" + description + "\", \"txn\":\"X99KHARMXNVFRDSKBIBFVBYSXRDMZRLYUHWNET9PJHXPIJUWEKWVQWGPHABKYRTKYVJXJWULDEKE99999\"}"
+  		console.log(jsonCode);
+
+  		$.ajax({
+            url: "http://3.87.137.58:8888/send_token",
+            type: 'POST',
+            dataType: 'json',
+            data: jsonCode,
+            success: function (result) {
+              alert(JSON.stringify(data));
+            },
+            error: function (error) {
+               alert("Cannot get data");
+            }
+        });
+	}
+  </script>
+</html>
