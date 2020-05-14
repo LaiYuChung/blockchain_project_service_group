@@ -1,4 +1,4 @@
-# blockchain_project_service_group
+# 一般商家 (layer-2)
 
 ## introduce:
 
