@@ -2608,7 +2608,7 @@
   content: "\e1a6";
 }
 .icon-beach_access:before {
-  content: "\eb3e";
+  content: "\2709";<!--eb3e-->
 }
 .icon-beenhere:before {
   content: "\e52d";
@@ -3021,6 +3021,21 @@
 .icon-phonelink:before {
   content: "\e326";
 }
+.icon-wallet1:before {
+  content:"\1f4b3";
+}
+.icon-wallet2:before {
+  content:"\1f3e6";
+}
+
+.icon-wallet3:before {
+  content:"\1f45b";
+}
+
+.icon-wallet4:before {
+  content:"\1f45d";
+}
+
 .icon-devices_other:before {
   content: "\e337";
 }
@@ -3388,7 +3403,8 @@
   content: "\e242";
 }
 .icon-format_paint:before {
-  content: "\e243";
+  content: "\1f589"; 
+  <!--e243-->
 }
 .icon-format_quote:before {
   content: "\e244";
