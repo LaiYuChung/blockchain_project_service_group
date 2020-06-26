@@ -129,6 +129,15 @@
           <td align = "center"></td>
           <td align = "center"></td></tr>
       </table>
+
+      <br><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRkIUZz9RaLZ-3EgBDvm_1nKw3g8E25fpOu-JlFiZjIpCANqzA59MIqBs47Ate-NVPfzFWhT7blUNHn/pubhtml?gid=316639283&amp;single=true&amp;widget=false&amp;headers=false&amp;chrome=false" height="300px" width="60%"></iframe>
+
       <br><br>
 
     <section class="site-section bg-light" id="contact-section">
@@ -160,7 +169,7 @@
               <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="subject"><font face="微軟正黑體">系別</font></label> 
+                  <label class="text-black" for="major"><font face="微軟正黑體">系別</font></label> 
                   <input type="major" id="major" class="form-control" placeholder="輸入系別">
                 </div>
               </div>
@@ -204,9 +213,14 @@
                   var month = date.getMonth()+1
                   var time1 = date.getFullYear()+"/"+month+"/"+date.getDate();
                   var time2 = date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();     
-                $.get("#", {
+                $.get("https://script.google.com/macros/s/AKfycbxdV4ibAg2PXeKEDyIBABefoqwa0jSNVVxUt5pamJQQnVVDRE8/exec", {
                         "date": time1,
-                        "time": time2
+                        "time": time2,
+                        "name": document.getElementById("name").value,
+                        "major": document.getElementById("major").value,
+                        "email": document.getElementById("email").value,
+                        "message": document.getElementById("message").value,
+                        "teacher": document.getElementById("teacher").value
                     });
                   var mention = time1 +" "+ time2 + " " + "我們已經收到您的填寫，請耐心等候老師的回覆，謝謝！"
                 alert(mention);
