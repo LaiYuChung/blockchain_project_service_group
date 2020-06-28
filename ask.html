@@ -127,7 +127,11 @@
           <td align = "center"></td></tr>
       </table>
       <br><br>
-      
+
+      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRkIUZz9RaLZ-3EgBDvm_1nKw3g8E25fpOu-JlFiZjIpCANqzA59MIqBs47Ate-NVPfzFWhT7blUNHn/pubhtml?gid=1979155291&amp;single=true&amp;widget=false&amp;headers=false&amp;chrome=false" height="300px" width="50%"></iframe>
+
+      <br><br>
+
     <section class="site-section bg-light" id="contact-section">
       <div class="container">
         <div class="row mb-5">
@@ -144,8 +148,8 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="text-black" for="name"><font face="微軟正黑體">老師姓名</font></label>
-                  <input type="text" id="name" class="form-control" placeholder="輸入名字，老師填寫">
+                  <label class="text-black" for="teachername"><font face="微軟正黑體">老師姓名</font></label>
+                  <input type="text" id="teachername" class="form-control" placeholder="輸入名字，老師填寫">
                 </div>
                 <!--
                 <div class="col-md-6"> fname half class:col-md-6 mb-3 mb-md-0
@@ -157,23 +161,23 @@
               <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="contact2"><font face="微軟正黑體">聯絡方式</font></label> 
-                  <input type="contact2" id="contact2" class="form-control" placeholder="輸入你的聯絡方式和該通訊軟體的ID">
+                  <label class="text-black" for="contact"><font face="微軟正黑體">聯絡方式</font></label> 
+                  <input type="text" id="contact" class="form-control" placeholder="輸入你的聯絡方式和該通訊軟體的ID">
                 </div>
               </div>
 
               <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="subject"><font face="微軟正黑體">系別</font></label> 
-                  <input type="major" id="major" class="form-control" placeholder="輸入系別">
+                  <label class="text-black" for="najor"><font face="微軟正黑體">系別</font></label> 
+                  <input type="text" id="major" class="form-control" placeholder="輸入系別">
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="message"><font face="微軟正黑體">訊息</font></label> 
-                  <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="輸入想要同學幫忙的事項"></textarea>
+                  <textarea name="text" id="message" cols="30" rows="7" class="form-control" placeholder="輸入想要同學幫忙的事項"></textarea>
                 </div>
               </div>
 
@@ -193,11 +197,15 @@
                   var month = date.getMonth()+1
                   var time1 = date.getFullYear()+"/"+month+"/"+date.getDate();
                   var time2 = date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();     
-                $.get("#", {
+                $.get("https://script.google.com/macros/s/AKfycbxJ8yrl6R--y6qbTUX8DYu171_Gv2W5HT7O-Fvp4G2t-BljR6y1/exec", {
                         "date": time1,
-                        "time": time2
+                        "time": time2,
+                        "teachername": document.getElementById("teachername").value,
+                        "contact": document.getElementById("contact").value,
+                        "major": document.getElementById("major").value,
+                        "message": document.getElementById("message").value
                     });
-                  var mention = time1 +" "+ time2 + " " + "我們已經收到您的填寫，請耐心等候同學的聯絡，謝謝！"
+                  var mention = time1 +" "+ time2 + " " + "我們已經收到您的填寫，請耐心等候老師的回覆，謝謝！"
                 alert(mention);
               }
           </script>
