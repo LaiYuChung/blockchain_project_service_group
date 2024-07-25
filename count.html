@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scoreboard</title>
+<style>
+  .person {
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="person">
+  <span>Person 1</span>
+  <span class="score">0</span>
+  <button class="add">+1</button>
+  <button class="subtract">-1</button>
+</div>
+
+<div class="person">
+  <span>Person 2</span>
+  <span class="score">0</span>
+  <button class="add">+1</button>
+  <button class="subtract">-1</button>
+</div>
+
+<div class="person">
+  <span>Person 3</span>
+  <span class="score">0</span>
+  <button class="add">+1</button>
+  <button class="subtract">-1</button>
+</div>
+
+<div class="person">
+  <span>Person 4</span>
+  <span class="score">0</span>
+  <button class="add">+1</button>
+  <button class="subtract">-1</button>
+</div>
+
+<div class="person">
+  <span>Person 5</span>
+  <span class="score">0</span>
+  <button class="add">+1</button>
+  <button class="subtract">-1</button>
+</div>
+
+<div class="person">
+  <span>Person 6</span>
+  <span class="score">0</span>
+  <button class="add">+1</button>
+  <button class="subtract">-1</button>
+</div>
+
+<script>
+  // Add event listeners to all +1 and -1 buttons
+  const addButtons = document.querySelectorAll('.add');
+  const subtractButtons = document.querySelectorAll('.subtract');
+  
+  addButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const scoreElement = button.parentElement.querySelector('.score');
+      let currentScore = parseInt(scoreElement.textContent);
+      scoreElement.textContent = currentScore + 1;
+    });
+  });
+  
+  subtractButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const scoreElement = button.parentElement.querySelector('.score');
+      let currentScore = parseInt(scoreElement.textContent);
+      scoreElement.textContent = currentScore - 1;
+    });
+  });
+</script>
+
+</body>
+</html>
